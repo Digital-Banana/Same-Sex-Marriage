@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Same Sex Marriage in the US</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee:200,700" rel="stylesheet">
+</head>
+<body>
+<div class="tagcontainer">
+   <div class=" headerleft">
+    <p><a href="https://digital-banana.github.io">Digital Banana // Kenny Jeurissen</a></p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="header">
+        <h1>Legal Status of Same Sex Marriage in the United States</h1>
+        <h2>1995 - 2015</h2>
+    </div>
+   
+    <svg id="map"></svg>
+
+    <div id="sliderContainer">
+        <div id="range">1995</div>
+        <input id="timeslide" type="range" min="0" max="20" value="0" step="1"/>
+    </div>
+    
+    <section class="info">
+        <p>Same-sex marriage in the United States was established on a state-by-state basis, expanding from 1 state in 2004 to 36 states in 2015, when, on June 26, 2015, same-sex marriage was established in all 50 states.</p>
+
+        <p>Made for <a href="https://www.reddit.com/r/dataisbeautiful/comments/7vegvf/battle_dataviz_battle_for_the_month_of_february/">Reddit's February Visualization Challenge.</a></p>
+        
+        <p><a href="https://github.com/zonination/samesmarriage/blob/master/ssm.csv">data</a> // <a href="https://github.com/Digital-Banana/Same-Sex-Marriage">code</a></p>
+    </section>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js" charset="utf-8"></script>
+<script src="usa/us.json"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
