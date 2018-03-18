@@ -27,11 +27,7 @@ var year = ["1995", "1996", "1997", "1998", "1999", "2000",
             "2007", "2008", "2009", "2010", "2011", "2012",
             "2013", "2014", "2015"];
 
-// Dataset Same Sex Marriage
 d3.csv("data/ssm.csv", function(data) {
-//    color.domain([0, 1, 2, 3]);
-    
-    // US States JSON
     d3.json("usa/us.json", function(json) {
         for (var i = 0; i < data.length; i++) {
             var dataState = data[i].State;
@@ -83,20 +79,12 @@ d3.csv("data/ssm.csv", function(data) {
                     json.features[j].properties.y2013 = y2013;
                     json.features[j].properties.y2014 = y2014;
                     json.features[j].properties.y2015 = y2015;
-                    /*
-                    for(i = 1995; i < 2016; i++) {
                     
-                        json.features...
-                    
-                    }
-                    
-                    
-                    
-                    */
                     break;
                 }
-            } // End Find Corresponding State Inside GeoJSON
-        } // End Find US State and Year Loop;
+            }
+        }
+        
         var states = svg.append("g")
             .attr("class", "states")
             .selectAll("path")
@@ -114,8 +102,7 @@ d3.csv("data/ssm.csv", function(data) {
             .enter().append("g");
         
         legend
-            .attr("transform", function(d, i) {            
-                //return "translate(" + i * 160 + "," + "0)"});
+            .attr("transform", function(d, i) {
                 return "translate(0," + i * 18 + ")"});
         
         legend
@@ -150,57 +137,7 @@ d3.csv("data/ssm.csv", function(data) {
         }
         
         function colorUpdate(d) {
-            
-//            return color(d.properties["y" + inputValue]);
-//            console.log("color " + color(d.properties["y"+inputValue]));
-            
-            if (inputValue == "1995") {
-                return color(d.properties.y1995);
-            } else if (inputValue == "1996") {
-                return color(d.properties.y1996);
-            } else if (inputValue == "1997") {
-                return color(d.properties.y1997);
-            } else if (inputValue == "1998") {
-                return color(d.properties.y1998);
-            } else if (inputValue == "1999") {
-                return color(d.properties.y1999);
-            } else if (inputValue == "2000") {
-                return color(d.properties.y2000);
-            } else if (inputValue == "2001") {
-                return color(d.properties.y2001);
-            } else if (inputValue == "2002") {
-                return color(d.properties.y2002);
-            } else if (inputValue == "2003") {
-                return color(d.properties.y2003);
-            } else if (inputValue == "2004") {
-                return color(d.properties.y2004);
-            } else if (inputValue == "2005") {
-                return color(d.properties.y2005);
-            } else if (inputValue == "2006") {
-                return color(d.properties.y2006);
-            } else if (inputValue == "2007") {
-                return color(d.properties.y2007);
-            } else if (inputValue == "2008") {
-                return color(d.properties.y2008);
-            } else if (inputValue == "2009") {
-                return color(d.properties.y2009);
-            } else if (inputValue == "2010") {
-                return color(d.properties.y2010);
-            } else if (inputValue == "2011") {
-                return color(d.properties.y2011);
-            } else if (inputValue == "2012") {
-                return color(d.properties.y2012);
-            } else if (inputValue == "2013") {
-                return color(d.properties.y2013);
-            } else if (inputValue == "2014") {
-                return color(d.properties.y2014);
-            } else if (inputValue == "2015") {
-                return color(d.properties.y2015);
-            }
-        }
-        
-        
-        
-    }); // End US States JSON
-    
-}); // End Dataset Same Sex Marriage
+            return color(d.properties["y" + inputValue]);
+        }        
+    });
+});
